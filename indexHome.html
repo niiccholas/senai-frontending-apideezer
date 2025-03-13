@@ -8,35 +8,50 @@
     <title>Catálogo Deezer</title>
 </head>
 <body>
-    <main>
         <header>
-            <div class="containerheader">
+            <div class="containerHeader">
                 <img src="https://cdn.worldvectorlogo.com/logos/deezer-new-logo.svg" alt="Deezer Logo"> <!-- deezer -->
                 <section>
                     <h1>A Deezer é mais que uma plataforma musical.</h1>
-                    <h2>Eleve o nível da sua experiência de escuta e<span>Viva a Música.</span></h2>
+                    <h2>Eleve o nível da sua experiência de escuta e <span>Viva a Música.</span></h2>
                 </section>
             </div>
-            <main>
-                <h2>Confira nosso catálogo</h1>
-                <ul>
-                    <button>Músicas</button>
-                    <button>Álbuns</button>
-                    <button>Artistas</button>
-                </ul>
-            </main>
-            <section>
+        </header>
+
+        <main>
+            <div class="containerMain">
+                <h2>Confira nosso catálogo:</h1>
+                <nav>
+                    <a href="#" class="botao">Músicas</a>
+                    <a href="#" class="botao">Álbuns</a>
+                    <a href="#" class="botao">Artistas</a>
+                </nav>
+            </div>
+        </main>
+        
+        <section id="cards">
+            <div class="containerCards">
                 <h1>Alguns conteúdos do Deezer</h3>
-                <ul id="carrossel">
-                    <li>
+                <ul class="carrossel">
+                    <div>
+                        <img src="https://cdn-images.dzcdn.net/images/cover/5026c46b38ed035092df6cfc5a4a288f/0x1900-000000-80-0-0.jpg" alt="">
                         <h2>Encore</h2>
                         <h3>Eminem</h3>
-                    </li>
-                    <li></li>
-                    <li></li>
+                    </div>
+
+                    <div>
+                        <img src="https://cdn-images.dzcdn.net/images/cover/91d20e91970ce75c6edba1ce281f4a58/500x500-000000-80-0-0.jpg" alt="">
+                        <h2>Abracadabra</h2>
+                        <h3>Lady Gaga</h3>
+                    </div>
+                    
+                    <div>
+                        <img src="https://cdn-images.dzcdn.net/images/cover/19e761f5efadd86098265258cb4e3615/500x500.jpg" alt="">
+                        <h2>Dark Red</h2>
+                        <h3>Steve Lacy</h3>
+                    </div>
                 </ul>
-            </section>
-        </header>
-    </main>
+            </div>
+        </section>
 </body>
 </html>
