@@ -6,13 +6,16 @@
     <title>Músicas - Deezer</title>
     <link rel="stylesheet" href="./css/styleMusica.css">
     <script src="./js/scriptMusica.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <a class="navegacao" href="#">Álbuns</a>
             <div class="homeTitle">
-                <a href=""><img src="./img/home.png" alt="Ícone - Home"></a>
+                <a href="./index.html"><img src="./img/home.png" alt="Ícone - Home"></a>
                 <h1>Músicas</h1>
             </div>
             <a class="navegacao" href="#">Artistas</a>
@@ -24,7 +27,22 @@
             <input id="musica" type="text" placeholder="Digite uma música aqui..." spellcheck="false" autocomplete="off">
         </div>
     </header>
-    <main></main>
+    <main>
+        <div class="categorias">
+            <section>
+                <h1>MÚSICA</h1>
+                <h1>ARTISTA</h1>
+                <h1>DURAÇÃO</h1>
+            </section>
+        </div>
+        <ul>
+            <li>
+                <div class="musica"></div> <!-- musica (capa, titulo) -->
+                <h2>Bad Omens, Poppy</h2> <!-- autor -->
+                <h2>04:34</h2> <!-- duracao -->
+            </li>
+        </ul>
+    </main>
     <footer></footer>
 </body>
 </html>
