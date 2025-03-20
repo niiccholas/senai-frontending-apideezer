@@ -1,54 +1,107 @@
 async function pesquisarMusica(nomeMusica) {
-    // URL correta para pesquisa de músicas
+
     const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}`;
+    // const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}`;
+
 
     const response = await fetch(url);
     const data = await response.json();
 
-    // Retorna a lista de músicas, que está dentro de data.data
-    return data.data || [];
+    console.log(data)
+
+    return data.data
 }
 
 async function criarLinhaMusica(musica) {
-    const lista = document.getElementById('lista');
 
-    const novaLinha = document.createElement('li');
+    const lista = document.getElementById('lista')
 
-    const playImg = document.createElement('img');
-    playImg.src = "./img/play.png";
+    const container = document.createElement('div')
+    container.classList.add('container')
 
-    const botaoPlay = document.createElement('div');
-    botaoPlay.appendChild(playImg);
+    const playImg = document.createElement('img')
+    playImg.src = "./img/play.png"
 
-    const capaMusica = document.createElement('a');
-    capaMusica.setAttribute('href', '#');
-    capaMusica.appendChild(botaoPlay);
+    const botaoPlay = document.createElement('div')
+    botaoPlay.appendChild(playImg)
 
-    const nomeMusica = document.createElement('h1');
-    nomeMusica.textContent = musica.title;
+    const capaMusica = document.createElement('a')
+    capaMusica.setAttribute('href', '#')
+    capaMusica.appendChild(botaoPlay)
+    capaMusica.style.backgroundImage = `url(${musica.album.cover_medium})`
 
-    const containerCapa = document.createElement('div');
-    containerCapa.classList.add('musica');
-    containerCapa.appendChild(capaMusica);
-    containerCapa.appendChild(nomeMusica);
+    const nomeMusica = document.createElement('h3')
+    nomeMusica.textContent = musica.title
 
-    const nomeAutor = document.createElement('h2');
-    nomeAutor.textContent = await processamentoAutores(musica);
+    const musicaContent = document.createElement('div')
+    musicaContent.classList.add('musica')
+    musicaContent.appendChild(capaMusica)
+    musicaContent.appendChild(nomeMusica)
 
-    const duracao = document.createElement('h2');
-    duracao.textContent = formatarTempo(musica.duration);
+    const listaMusica = document.createElement('section')
+    listaMusica.id = 'listaMusica'
+    listaMusica.appendChild(musicaContent)
 
-    novaLinha.appendChild(containerCapa);
-    novaLinha.appendChild(nomeAutor);
-    novaLinha.appendChild(duracao);
+    const musicaCategoriaText = document.createElement('h1')
+    musicaCategoriaText.textContent = 'MÚSICA'
 
-    capaMusica.style.backgroundImage = `url(${musica.album.cover_medium})`;
+    const colunaMusica = document.createElement('li')
+    colunaMusica.classList.add('coluna')
+    colunaMusica.appendChild(musicaCategoriaText)
+    colunaMusica.appendChild(listaMusica)
 
-    lista.appendChild(novaLinha);
+    const linha = document.createElement('div')
+    linha.classList.add('linha')
+
+    const nomeArtista = document.createElement('h2')
+    nomeArtista.textContent = await processamentoAutores(musica)
+    const listaAutor = document.createElement('section')
+    listaAutor.id = 'listaAutor'
+    listaAutor.appendChild(nomeArtista)
+
+    const artistaCategoriaText = document.createElement('h1')
+    artistaCategoriaText.textContent = 'ARTISTA'
+
+    const colunaArtista = document.createElement('li')
+    colunaArtista.classList.add('coluna')
+    colunaArtista.appendChild(artistaCategoriaText)
+    colunaArtista.appendChild(listaAutor)
+
+    const duracao = document.createElement('h2')
+    duracao.textContent = formatarTempo(musica.duration)
+
+    const listaDuracao = document.createElement('section')
+    listaDuracao.id = 'listaDuracao'
+    listaDuracao.appendChild(duracao)
+
+    const duracaoCategoriaText = document.createElement('h1')
+    duracaoCategoriaText.textContent = 'DURAÇÃO'
+
+    const colunaDuracao = document.createElement('li')
+    colunaDuracao.classList.add('coluna')
+    colunaDuracao.appendChild(duracaoCategoriaText)
+    colunaDuracao.appendChild(listaDuracao)
+
+    container.appendChild(linha)
+    container.appendChild(colunaMusica)
+    container.appendChild(colunaArtista)
+    container.appendChild(colunaDuracao)
+
+    lista.appendChild(container);
+}
+
+function formatarTempo(segundos) {
+    const minutos = Math.floor(segundos / 60);
+    const segundosRestantes = segundos % 60;
+
+    const minutosFormatados = minutos < 10 ? '0' + minutos : minutos;
+    const segundosFormatados = segundosRestantes < 10 ? '0' + segundosRestantes : segundosRestantes;
+
+    return `${minutosFormatados}:${segundosFormatados}`;
 }
 
 async function verificarAutores(musica) {
-    const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/track/${musica.id}`;
+    const url = `https://corsproxy.io/?key=df2c5a13&url=https://api.deezer.com/track/${musica.id}`;
 
     const response = await fetch(url);
     const music = await response.json();
@@ -78,17 +131,6 @@ async function processamentoAutores(musica) {
         contribuitorData = musica.artist.name;
     }
     return contribuitorData;
-}
-
-
-function formatarTempo(segundos) {
-    const minutos = Math.floor(segundos / 60);
-    const segundosRestantes = segundos % 60;
-
-    const minutosFormatados = minutos < 10 ? '0' + minutos : minutos;
-    const segundosFormatados = segundosRestantes < 10 ? '0' + segundosRestantes : segundosRestantes;
-
-    return `${minutosFormatados}:${segundosFormatados}`;
 }
 
 async function preencherMusica() {
