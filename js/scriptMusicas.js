@@ -1,6 +1,6 @@
 async function pesquisarMusica(nomeMusica) {
 
-    const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}`;
+    const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}&type=track`;
     // const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}`;
 
 
