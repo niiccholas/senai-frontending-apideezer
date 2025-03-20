@@ -1,6 +1,6 @@
 async function pesquisarMusica(nomeMusica) {
     // URL correta para pesquisa de músicas
-    const url = `https://corsproxy.io/?https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}`;
+    const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -48,7 +48,7 @@ async function criarLinhaMusica(musica) {
 }
 
 async function verificarAutores(musica) {
-    const url = `https://corsproxy.io/?https://api.deezer.com/track/${musica.id}`;
+    const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/track/${musica.id}`;
 
     const response = await fetch(url);
     const music = await response.json();
