@@ -142,18 +142,19 @@ main ul li{
     display: flex;
     justify-content: space-between;
     padding-inline: 14.5vw;
-    background-color: #D1D1D1;
     align-items: center;
+    position: relative;
 }
 
 main ul li h2{
     font-family: 'Kanit', sans-serif;
     font-weight: 350;
+    background-color: antiquewhite;
 }
 
 main ul li h2:first-of-type{
-    padding-right: 2vw;
     font-size: 2vh;
+    position: relative;
 }
 
 main ul li h2:nth-of-type(2){
@@ -166,14 +167,14 @@ main .musica{
 }
 
 main .musica h1{
-    padding-left: 1vh;
+    padding-left: 5.5vw;
     font-family: "Kanit", sans-serif;
     font-size: 2.2vh;
     font-weight: 500vh;
 }
 
 main a{
-    background-image: url() ;
+    background-image: url(https://cdn-images.dzcdn.net/images/cover/5026c46b38ed035092df6cfc5a4a288f/0x1900-000000-80-0-0.jpg) ;
     height: 10vh;
     width: 10vh;
     background-repeat: no-repeat;
