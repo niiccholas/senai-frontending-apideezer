@@ -28,7 +28,11 @@ async function criarLinhaMusica(musica) {
     botaoPlay.appendChild(playImg)
 
     const capaMusica = document.createElement('a')
-    capaMusica.setAttribute('href', `/senai-frontending-apideezer/indexMusica.html?id=${musica.id}`) //leva para outra página, alterar se o código estiver local
+    if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+        capaMusica.setAttribute('href', `../indexMusica.html?id=${musica.id}`) //leva para outra página, alterar se o código estiver local
+    } else {
+        capaMusica.setAttribute('href', `/senai-frontending-apideezer/indexMusica.html?id=${musica.id}`) //leva para outra página, alterar se o código estiver local
+    }
     capaMusica.appendChild(botaoPlay)
     capaMusica.style.backgroundImage = `url(${musica.album.cover_medium})`
 
