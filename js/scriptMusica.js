@@ -4,8 +4,9 @@ const params = new URLSearchParams(window.location.search);
 const idMusica = params.get('id')
 
 async function pegarDadosMusica(){
-    const url = `https://corsproxy.io/?key=df2c5a13&url=https://api.deezer.com/track/${idMusica}`;
 
+    const url = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://api.deezer.com/track/${idMusica}`)}`;
+// corrigir
     const response = await fetch(url);
     const music = await response.json();
 
@@ -15,8 +16,7 @@ async function pegarDadosMusica(){
 
 async function pegarDadosAlbum(idAlbum){
 
-
-    const url = `https://corsproxy.io/?key=df2c5a13&url=https://api.deezer.com/album/${idAlbum}`;
+    const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/album/${idAlbum}`;
 
 
     const response = await fetch(url);
@@ -27,7 +27,8 @@ async function pegarDadosAlbum(idAlbum){
 }
 
 async function pegarDadosRadio(idArtista){
-    const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/artist/${idArtista}/radio`
+
+    const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/album/${idArtista}`;
     const response = await fetch(url);
     const radio = await response.json();
 

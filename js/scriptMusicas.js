@@ -2,8 +2,9 @@
 
 async function pesquisarMusica(nomeMusica) {
 
-    const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}&type=track`;
-    // const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}`;
+    nomeMusica = encodeURIComponent(nomeMusica)
+
+    const url = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://api.deezer.com/search?q=${nomeMusica}`)}`;
 
 
     const response = await fetch(url);
@@ -107,7 +108,7 @@ function formatarTempo(segundos) {
 }
 
 async function verificarAutores(musica) {
-    const url = `https://corsproxy.io/?key=df2c5a13&url=https://api.deezer.com/track/${musica.id}`;
+    const url = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://api.deezer.com/track/${musica.id}`)}`;
 
     const response = await fetch(url);
     const music = await response.json();
