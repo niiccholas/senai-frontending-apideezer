@@ -5,11 +5,12 @@ const idMusica = params.get('id')
 
 async function pegarDadosMusica(){
 
-    const url = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(`https://api.deezer.com/track/${idMusica}`)}`;
+    const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/track/${idMusica}`;
 // corrigir
     const response = await fetch(url);
     const music = await response.json();
 
+    console.log(music)
 
     return music
 }
@@ -22,17 +23,16 @@ async function pegarDadosAlbum(idAlbum){
     const response = await fetch(url);
     const album = await response.json();
 
-
     return album
 }
 
 async function pegarDadosRadio(idArtista){
 
-    const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/album/${idArtista}`;
+    const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/artist/${idArtista}/radio`;
     const response = await fetch(url);
     const radio = await response.json();
 
-
+    console.log(radio)
     return radio.data
 }
 
