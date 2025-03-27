@@ -21,21 +21,25 @@ body {
 
 body .coluna{
     flex: 1;
-    background-color: antiquewhite;
 }
 
 .coluna:nth-child(1){
     background-color: #CF9BFF;
 }
 .coluna:nth-child(2){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 1.5;
-    background-color: #6203bb;
+    align-self: center;
+    padding-bottom: 5vh;
 }
 .coluna:nth-child(3){
     background-color: #9983ae;
 }
 
-.coluna button{
+#musicInfo button{
     background-color: aliceblue;
     width: 32vw;
     height: 60vh;
@@ -43,9 +47,15 @@ body .coluna{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(https://cdn-images.dzcdn.net/images/cover/826894f2ec39ae1eea620eddecdcf6b7/1000x1000-000000-80-0-0.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 1vh 0.7vh 2vh rgba(0, 0, 0, 0.4); /* Sombra */
+    border-radius: 5vh;
 }
 
-.coluna .botaoPlay{
+#musicInfo .botaoPlay{
     background-color: #6203bb;
     width: 7vw;
     height: 14vh;
@@ -57,17 +67,141 @@ body .coluna{
     transition: 0.4s ease-out;
 }
 
-.coluna button:hover .botaoPlay{
+#musicInfo button:hover .botaoPlay{
     transition: 0.6s ease-in;
     opacity: 60%;
 }
 
-.coluna .botaoPlay img{
+#musicInfo button.hovered .botaoPlay{
+    transition: 0.6s ease-in;
+    opacity: 60%;
+}
+
+#musicInfo .botaoPlay img{
     height: 9vh;
     padding-left: 0.3vw;
 }
 
+#audio{
+    display: none;
+}
 
+#musicInfo section{
+    max-width: 100%;
+    font-family: "Kanit", sans-serif;
+    word-break: break-word;
+}
+
+
+#musicInfo section h1{
+    font-family: "Kanit", sans-serif;
+    font-size: 6vh;
+    overflow: hidden;
+    font-weight: 700;
+    text-align: center;
+    text-overflow: ellipsis;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+
+    /* padrão para navegadores modernos */
+    line-clamp: 2; 
+    box-orient: vertical; 
+}
+
+#musicInfo section h2{
+    font-family: "Kanit", sans-serif;
+    font-size: 3vh;
+    font-weight: 400;
+    text-align: center;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 1;  /* Limita o texto a 2 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    line-clamp: 1;
+    box-orient: vertical;
+}
+
+#musicInfo .containerA{
+    padding-top: 5vh;
+}
+#musicInfo a{
+    border-radius: 2vw;
+    padding: 2vh;
+    padding-inline: 2vw;
+    color: white;
+    background-color: #a238ffd4;
+    font-family: "Kanit", sans-serif;
+    font-size: 4vh;
+    font-weight: 500;
+}
+
+/* CONTAINER RELATED */ 
+
+.containerRelated{
+    background-color: #6203bb;
+    padding-top: 5vh;
+}
+
+.containerRelated h1{
+    text-align: center;
+    width: 100%;
+    font-family: "Kanit", sans-serif;
+    font-size: 4vh;
+    font-weight: 600;
+}
+
+.containerRelated ul{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    background-color: aqua;
+    padding-left: 2vw;
+    gap: 1vh;
+}
+
+.containerRelated ul li{
+    display: flex;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+.containerRelated ul li img{
+    border-radius: 1vh;
+    height: 10vh;
+}
+
+.containerRelated ul li a{
+    width: 22vw;
+    padding-left: 0.5vw;
+    font-family: "Kanit", sans-serif;
+    font-size: 2vh;
+    font-weight: 400;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* Limita o texto a 2 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    line-clamp: 2;
+    box-orient: vertical;
+}
+
+/* CONTAINER ALBUM */
+
+.coluna:nth-child(3){
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
 
 
 .container {

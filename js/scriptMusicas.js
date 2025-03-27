@@ -1,3 +1,5 @@
+'use strict'
+
 async function pesquisarMusica(nomeMusica) {
 
     const url = `https://corsproxy.io/?key=21d7902b&url=https://api.deezer.com/search?q=${encodeURIComponent(nomeMusica)}&type=track`;
@@ -115,18 +117,18 @@ async function verificarAutores(musica) {
 }
 
 async function processamentoAutores(musica) {
-    const json = await verificarAutores(musica);
+    const json = await verificarAutores(musica)
 
-    let contribuitorData = '.';
+    let contribuitorData = '.'
     if (json.status === true) {
-        contribuitorData = '';
+        contribuitorData = ''
         json.data.forEach(contribuidor => {
             if (contribuitorData == '') {
-                contribuitorData = contribuidor.name; // Exemplo: Poppy
+                contribuitorData = contribuidor.name
             } else {
-                contribuitorData = `${contribuitorData}, ` + contribuidor.name;
+                contribuitorData = `${contribuitorData}, ` + contribuidor.name
             }
-        });
+        })
     } else {
         contribuitorData = musica.artist.name;
     }

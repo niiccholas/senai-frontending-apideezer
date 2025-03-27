@@ -3,23 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <script src="./js/scriptMusica.js" defer></script>
+    <title>Música</title>
     <link rel="stylesheet" href="./css/styleMusica.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="coluna"></div>
-        <div class="coluna">
-            <button>
+        <div id="musicRelated"class="coluna">
+            <div class="containerRelated">       
+                <h1>De Poppy</h1>
+                <ul>
+                    <li>
+                        <img src="https://cdn-images.dzcdn.net/images/artist/ebd810f46ad43aa662fc4932e273bc84/250x250-000000-80-0-0.jpg" alt="">
+                        <a href="#">Die With A Smile</a> <!-- NOME MUSICA -->
+                    </li>
+                    <li>
+                        <img src="https://cdn-images.dzcdn.net/images/artist/ebd810f46ad43aa662fc4932e273bc84/250x250-000000-80-0-0.jpg" alt="">
+                        <a href="#">Die With A Smile</a> <!-- NOME MUSICA -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="musicInfo" class="coluna">
+            <button id="botao" class="play">
                 <div class="botaoPlay">
-                    <img src="./img/playGrande.png" alt="Play">
+                    <img id="iconPlay" src="./img/playGrande.png" alt="Play">
+                    <audio id="audio" src="https://cdnt-preview.dzcdn.net/api/1/1/4/4/5/0/445a8b49ece14936196a166ff6f7ea0e.mp3?hdnea=exp=1743040021~acl=/api/1/1/4/4/5/0/445a8b49ece14936196a166ff6f7ea0e.mp3*~data=user_id=0,application_id=42~hmac=34777067cb2e31752fa162a9a0a6c95d98976a9cb072fa34afba3ba627b750bb"></audio>
                 </div>
             </button>
-            <h1>V.A.N</h1>
-            <h2>Bad Omens, Poppy</h2>
-            <a href="#">Ouça a versão completa!</a>
+            <section>
+                <h1>V.A.N</h1>
+                <h2>Bad Omens, Poppy</h2>
+            </section>
+
+            <div class="containerA"><a href="#">Ouça a versão completa!</a></div>
+
         </div>
-        <div class="coluna"></div>
+        <div class="coluna">
+            <a href="./indexMusicas.html">Voltar</a>
+            <!-- <div class="containerAlbum">       
+                <h1>Do mesmo álbum</h1>
+                <ul>
+                    <li>
+
+                        <a href="#">Die With A Smile</a> NOME MUSICA 
+                        <img src="https://cdn-images.dzcdn.net/images/artist/ebd810f46ad43aa662fc4932e273bc84/250x250-000000-80-0-0.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="https://cdn-images.dzcdn.net/images/artist/ebd810f46ad43aa662fc4932e273bc84/250x250-000000-80-0-0.jpg" alt="">
+                        <a href="#">Die With A Smile</a> NOME MUSICA 
+                    </li>
+                </ul> -->
+            </div>
+        </div>
     </div>
     
 </body>

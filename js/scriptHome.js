@@ -1,4 +1,6 @@
-// Imagens fornecidas
+'use strict'
+
+
 let images = [
     {
         imagem: "https://cdn-images.dzcdn.net/images/cover/5026c46b38ed035092df6cfc5a4a288f/0x1900-000000-80-0-0.jpg",

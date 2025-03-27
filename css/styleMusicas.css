@@ -112,7 +112,7 @@ header .searchBar #musica{
 
 main{
     flex-grow: 1;
-    padding-bottom: 30vh;
+    padding-bottom: 20vh;
 }
 
 main ul {
@@ -182,6 +182,7 @@ main .musica h3{
     padding-left: 1vw;
     font-family: "Kanit", sans-serif;
     font-size: 2.2vh;
+    cursor:default;
     text-align:start;
     display: flex;
     align-items: center;
