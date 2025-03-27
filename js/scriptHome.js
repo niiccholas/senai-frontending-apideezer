@@ -62,8 +62,8 @@ const updateImages = () => {
     
 }
 
-
-
-setInterval(updateImages, 3500);
+setTimeout(() => {
+    setInterval(updateImages, 3500);
 
 updateImages();
+}, 800);
