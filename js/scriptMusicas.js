@@ -28,7 +28,7 @@ async function criarLinhaMusica(musica) {
     botaoPlay.appendChild(playImg)
 
     const capaMusica = document.createElement('a')
-    capaMusica.setAttribute('href', '#')
+    capaMusica.setAttribute('href', `../indexMusica.html?id=${musica.id}`) //leva para outra página
     capaMusica.appendChild(botaoPlay)
     capaMusica.style.backgroundImage = `url(${musica.album.cover_medium})`
 

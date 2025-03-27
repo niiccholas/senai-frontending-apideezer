@@ -23,9 +23,6 @@ body .coluna{
     flex: 1;
 }
 
-.coluna:nth-child(1){
-    background-color: #CF9BFF;
-}
 .coluna:nth-child(2){
     width: 100%;
     display: flex;
@@ -35,19 +32,14 @@ body .coluna{
     align-self: center;
     padding-bottom: 5vh;
 }
-.coluna:nth-child(3){
-    background-color: #9983ae;
-}
-
 #musicInfo button{
-    background-color: aliceblue;
     width: 32vw;
     height: 60vh;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(https://cdn-images.dzcdn.net/images/cover/826894f2ec39ae1eea620eddecdcf6b7/1000x1000-000000-80-0-0.jpg);
+    background-image: url();
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,6 +91,7 @@ body .coluna{
     overflow: hidden;
     font-weight: 700;
     text-align: center;
+    cursor: default;
     text-overflow: ellipsis;
     
     display: -webkit-box;
@@ -116,6 +109,7 @@ body .coluna{
 #musicInfo section h2{
     font-family: "Kanit", sans-serif;
     font-size: 3vh;
+    cursor: default;
     font-weight: 400;
     text-align: center;
     
@@ -146,7 +140,6 @@ body .coluna{
 /* CONTAINER RELATED */ 
 
 .containerRelated{
-    background-color: #6203bb;
     padding-top: 5vh;
 }
 
@@ -154,7 +147,7 @@ body .coluna{
     text-align: center;
     width: 100%;
     font-family: "Kanit", sans-serif;
-    font-size: 4vh;
+    font-size: 5vh;
     font-weight: 600;
 }
 
@@ -162,7 +155,6 @@ body .coluna{
     display: flex;
     flex-direction: column;
     padding-top: 1vh;
-    background-color: aqua;
     padding-left: 2vw;
     gap: 1vh;
 }
@@ -182,7 +174,7 @@ body .coluna{
     width: 22vw;
     padding-left: 0.5vw;
     font-family: "Kanit", sans-serif;
-    font-size: 2vh;
+    font-size: 2.5vh;
     font-weight: 400;
 
     display: -webkit-box;
@@ -197,12 +189,66 @@ body .coluna{
 
 /* CONTAINER ALBUM */
 
-.coluna:nth-child(3){
+#musicRelated2{
     display: flex;
     flex-direction: column;
-    align-items: end;
 }
 
+#musicRelated2 #voltar{
+    font-family: "Kanit", sans-serif;
+    font-size: 2.5vh;
+    align-self: end;
+    color: white;
+    font-weight: 400;
+    padding: 4vh;
+}
+
+#musicRelated2 h1{
+    font-family: "Kanit", sans-serif;
+    font-size: 5vh;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.05;
+    padding-top: 13vh;
+}
+
+#musicRelated2 li{
+    display: flex;
+    padding-left: 1vw;
+    list-style: none;
+    align-items: center;
+    word-wrap: break-word;
+}
+
+#musicRelated2 ul{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1vh;
+    gap: 1vh;
+}
+
+#musicRelated2 li a{
+    padding-left: 0.5vw;
+    font-size: 2.5vh;
+    font-weight: 400;
+    font-family: 'Kanit', sans-serif;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* Limita o texto a 2 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    line-clamp: 2;
+    box-orient: vertical;
+
+}
+
+
+#musicRelated2 img{
+    border-radius: 1vh;
+    height: 10vh;
+}
 
 .container {
     display: flex;

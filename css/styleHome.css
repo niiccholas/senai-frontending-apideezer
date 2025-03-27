@@ -78,7 +78,7 @@ main {
 
 .containerMain nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .containerMain nav a{
@@ -94,7 +94,7 @@ main {
 }
 
 .botao {
-    padding: 3vh 10vh;
+    padding: 3vh 12vh;
     border-radius: 5vh;
 }
 
