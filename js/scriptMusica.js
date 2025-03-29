@@ -6,7 +6,7 @@ const idMusica = params.get('id')
 async function pegarDadosMusica(){
 
     const url = `https://api.codetabs.com/v1/proxy?quest=https://api.deezer.com/track/${idMusica}`;
-// corrigir
+
     const response = await fetch(url);
     const music = await response.json();
 
@@ -154,18 +154,18 @@ function playPauseMusic(){
 
     if (audio.paused) {
         audio.play();
-        icon.src = '../img/pause.png'
+        icon.src = './img/pause.png'
         botao.classList.remove('play');
         botao.classList.add('pause');
     } else {
         audio.pause();
-        icon.src = '../img/playGrande.png'
+        icon.src = './img/playGrande.png'
         botao.classList.remove('pause');
         botao.classList.add('play');
     }
 
     audio.addEventListener('ended', () => {
-        icon.src = '../img/playGrande.png'
+        icon.src = './img/playGrande.png'
         botao.classList.remove('pause');
         botao.classList.add('play');
     });
